@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="listview_width_ratio">0.35</dimen>
+    <dimen name="listview_height_ratio">0.5</dimen>
+</resources>

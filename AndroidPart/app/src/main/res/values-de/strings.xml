@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--EntryActivity-->
+    <string name="entry_device_name_placeholder">(kein konfiguriert)</string>
+    <string name="entry_target">Zielgerät</string>
+    <string name="entry_config_blt">Bluetooth konfigurieren</string>
+    <string name="entry_screen">Touchbildschirm</string>
+    <string name="entry_info">Info</string>
+    <string name="entry_settings">Einstellungen</string>
+
+    <!--BluetoothConfigActivity-->
+    <string name="bt_just_visible">Sichtbare</string>
+    <string name="bt_paired">Gekoppelte</string>
+    <string name="bt_discover">Sichtbare finden</string>
+    <string name="bt_cancel">Ablehnen</string>
+    <string name="bt_stop">Stoppen</string>
+    <string name="bt_show">Gekoppelte zeigen</string>
+    <string name="bt_action_text">Gerät für die Verbindung suchen und auswählen</string>
+
+    <!--Settings-->
+    <string name="cursor_size_point">Cursor-Größe</string>
+    <string name="reconnect_point">Automatische Wiederverbindung, wenn Bluetooth wiederhergestellt wird, nachdem es während einer aktiven Verbindung deaktiviert wurde</string>
+    <string name="lang_point">Sprache</string>
+    <string name="theme_point">Dunkles Thema</string>
+    <string name="sound1_option_point">Ton bei Verbindung/Trennung abspielen</string>
+    <string name="sound2_option_point">Vibrieren bei der Simulation des Drückens/Loslassens der Maus</string>
+
+    <!--Info-->
+    <string name="info_action_text">Wie man die App nutzt</string>
+    <string-array name="info_categories">
+        <item>Wie zu verbinden</item>
+        <item>Wie Mausgesten zu machen</item>
+        <item>Wie zu trennen</item>
+    </string-array>
+    <string-array name="gestures_explain">
+        <item>die verwendete Maustaste zu wählen: den Umschalter mit einem Pfeil zu schalten, die gewählte Taste hervorgehoben wird, standardmäßig die linke ist gewählt</item>
+        <item>Cursor zu bewegen: den Finger auf dem Bildschirm bewegen</item>
+        <item>Klicken: einmaliges Tippen</item>
+        <item>Doppelklicken: zweimaliges Tippen</item>
+        <item>Maus nach unten: den Finger auf dem Bildschirm pressen</item>
+        <item>Maus nach oben: den Finger heben</item>
+        <item>Mausrad nach oben zu scrollen: die Lauter-Taste drücken</item>
+        <item>Mausrad nach unten zu scrollen: die Leiser-Taste drücken</item>
+    </string-array>
+    <string-array name="disconnect_options">
+        <item>a) auf dem Handy die Pause-Taste zu drücken</item>
+        <item>b) auf dem Handy die Zuhause-Taste zu drücken</item>
+        <item>c) auf dem Handy die App zu beenden</item>
+        <item>d) auf dem Handy die App zu schließen</item>
+        <item>e) das Handy auszuschalten</item>
+        <item>f) auf dem Laptop/Computer die "Disconnect"-Taste (Trennen) zu drücken</item>
+        <item>g) auf dem Laptop/Computer das Programm zu schließen</item>
+    </string-array>
+
+    <!--Touchscreen-->
+    <string name="screen_you_can_connect">Zum Verbinden die Wiedergabetaste drücken</string>
+    <string name="screen_no_blt">Bluetooth ist deaktiviert</string>
+    <string name="screen_up">Oben</string>
+    <string name="screen_down">Unten</string>
+    <string name="screen_left">Links</string>
+    <string name="screen_right">Rechts</string>
+    <string name="screen_no_conn_toast_text">Das Zielgerät wartet momentan nicht auf eine Verbindung</string>
+</resources>

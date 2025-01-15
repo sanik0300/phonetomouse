@@ -1,0 +1,104 @@
+﻿<Window x:Class="DesktopClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopClient"
+        xmlns:properties="clr-namespace:DesktopClient.Properties"
+        mc:Ignorable="d"
+        Title="Phone to mouse (server side)" Height="350" Width="800" Margin="5"
+        Closing="Window_Closing">
+    <Window.Resources>
+        <local:CanvasBorderHeightConverter x:Key="borderHConverter"/>
+    </Window.Resources>
+
+    <Grid VerticalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="{Binding ElementName=connectionTitleText, Path=ActualWidth}"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel LastChildFill="True">
+            <!--Button x:Name="cancelDiscBtn" DockPanel.Dock="Bottom" Content="Cancel current discovery" 
+                    HorizontalAlignment="Center" IsEnabled="False" Click="cancelDiscBtn_Click"/-->
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Bottom">
+                <Separator/>
+                <CheckBox x:Name="connectMiniCheck" Content="Automatically minimize window on connection" Margin="0 10 0 0"
+                          IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=AutoMinimizeOnConnect}"
+                          Checked="connectMiniCheck_CheckedChanged" Unchecked="connectMiniCheck_CheckedChanged"/>
+                <CheckBox x:Name="disconnectMaxiCheck" Content="Automatically show window back when connection ends" Margin="0 10 0 0"
+                          IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=AutoMaximizeOnDisconnect}"
+                          Checked="disconnectMaxiCheck_CheckedChanged" Unchecked="disconnectMaxiCheck_CheckedChanged"/>
+            </StackPanel>
+            
+            <DockPanel x:Name="discoverBtnsPanel" DockPanel.Dock="Bottom">
+                <Button x:Name="discVisibleBtn" Content="Discover visible" DockPanel.Dock="Left" Click="discVisibleBtn_Click"/>
+                <Button x:Name="discPairedBtn" Content="Discover paired" DockPanel.Dock="Right" Click="discPairedBtn_Click"/>
+                <Button x:Name="discAllBtn" Content="Discover all" HorizontalAlignment="Center" Click="discAllBtn_Click"/>
+            </DockPanel>
+            <TextBlock Text="Choose which device to wait for connection from" HorizontalAlignment="Center" DockPanel.Dock="Top"
+                       FontWeight="Bold" x:Name="connectionTitleText"/>
+           
+            <Grid MinHeight="200" DockPanel.Dock="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Vertical" x:Name="stackV">
+                    <TextBlock Text="Just visible" HorizontalAlignment="Center"/>
+
+                    <MediaElement Source="loading.gif" MediaEnded="MediaElement_MediaEnded" UnloadedBehavior="Manual" Visibility="Collapsed"/>
+                    <ListBox x:Name="visibleListBox" SelectionMode="Single"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" x:Name="stackP" Grid.Column="1">
+                    <TextBlock Text="Paired" HorizontalAlignment="Center"/>
+
+                    <MediaElement Source="loading.gif" MediaEnded="MediaElement_MediaEnded" UnloadedBehavior="Manual" Visibility="Collapsed"/>
+                    <ListBox x:Name="pairedListBox" SelectionMode="Single" SelectionChanged="pairedListBox_SelectionChanged"/>
+                </StackPanel>
+            </Grid>
+        </DockPanel>
+
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Left" Width="3" VerticalAlignment="Stretch"/>
+
+        <DockPanel Grid.Column="1" Margin="3 0 0 0" x:Name="panel2" SizeChanged="panel2_SizeChanged">
+            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock>Device to connect with:</TextBlock>
+                    <TextBox x:Name="selectedPairedDeviceTxt" IsEnabled="False" FontWeight="Bold"></TextBox>
+                    <Button x:Name="openConnectionBtn" Click="openConnectionBtn_Click" IsEnabled="False">Connect</Button>
+                    <TextBlock x:Name="waitStatusText"></TextBlock>
+                </StackPanel>
+
+                <Button x:Name="closeConnectionBtn" Click="closeConnectionBtn_Click" 
+                        DockPanel.Dock="Right" IsEnabled="False">Disconnect</Button>
+            </DockPanel>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <TextBlock FontWeight="Bold">Last gesture:</TextBlock>
+                <TextBlock x:Name="writeGesturesHereTxt"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" x:Name="settingPanel">
+                <CheckBox x:Name="reconnectSetting"
+                          Checked="reconnectSetting_CheckedChanged" Unchecked="reconnectSetting_CheckedChanged"
+                          IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=WaitForReconnect}"></CheckBox>
+                <TextBlock TextWrapping="Wrap" x:Name="setting1text">
+                    <Span FontWeight="Bold">Wait for reconnection if the last phone disconnect wasn't an explicit click of "stop" button</Span>
+                    such as when user left the "touchscreen" page, exited the app, or Bluetooth went off
+                </TextBlock>
+
+            </StackPanel>
+
+            <Border BorderBrush="Black" BorderThickness="3" x:Name="canvasBdr">
+                <Border.Height>
+                    <MultiBinding Converter="{StaticResource borderHConverter}">
+                        <Binding RelativeSource="{RelativeSource Mode=Self}" Path="ActualWidth"/>
+                        <Binding RelativeSource="{RelativeSource Mode=Self}" Path="BorderThickness"/>
+                    </MultiBinding>
+                </Border.Height>
+                <Canvas x:Name="canvas" Background="Gray"></Canvas>
+            </Border>
+        </DockPanel>
+    </Grid>
+</Window>

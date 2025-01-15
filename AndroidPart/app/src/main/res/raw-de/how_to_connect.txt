@@ -1,0 +1,7 @@
+1. Bluetooth soll aktiviert sein auf dem Handy und auf dem Laptop/Computer
+2. Verbinden Sie das Handy mit dem Laptop/Computer über Bluetooth
+3. Wenn die Name des Laptops/Computers auf der Hauptseite nicht angezeigt ist, gehen Sie zu dem "Bluetooth konfigurieren" und wählen Sie die notwendige Name in der Gekoppelte-Liste aus
+4. Auf dem Laptop/Computer drücken Sie "Discover paired" (Gekoppelte erfahren) oder "Discover all" (Alle erfahren) und wählen Sie die Handyname in der "Paired"-Liste aus - sie wird neben der "Connect"-Taste (Verbinden) erscheinen
+5. Drücken Sie "Connect"
+6. Auf dem Handy gehen Sie zum Touchbildschirm und drücken Sie Wiedergabetaste
+7. Wenn die Verbindung hergestellt ist, das Seitenverhältnis des Rahmens wie das des Laptops/Computers wird, und Aufschriften mit Richtungen erscheinen werden; auf dem Laptop/Computer das graues Feld Farbe ändern wird und ungefähren Standort Ihre Gesten zeigen wird

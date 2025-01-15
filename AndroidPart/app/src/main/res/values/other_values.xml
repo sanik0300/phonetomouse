@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="r_l_view_border_width">8dp</dimen>
+    <dimen name="listview_width_ratio">0.4</dimen>
+    <dimen name="listview_height_ratio">0.3</dimen>
+    <dimen name="standard_button_height">50dip</dimen>
+    <dimen name="info_bottom_offset">80dp</dimen>
+
+    <integer name="progress_seconds_max">12</integer>
+    <integer name="cursor_scale_min">10</integer>
+    <integer name="cursor_scale_max">30</integer>
+</resources>

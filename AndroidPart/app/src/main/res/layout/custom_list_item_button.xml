@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/pair_request_btn"
+
+            android:scrollbarFadeDuration="0"
+            android:clickable="true"
+            android:descendantFocusability="blocksDescendants">
+        <TextView
+                android:id="@android:id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:singleLine="true"
+                android:clickable="false"
+                android:focusable="false"
+                android:textIsSelectable="false"
+
+                android:focusableInTouchMode="false"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                android:gravity="center_vertical"
+                android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+                android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+                android:minHeight="?android:attr/listPreferredItemHeightSmall"/>
+    </HorizontalScrollView>
+    <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/pair_request_btn"
+            android:src="@drawable/arrow_right"
+
+            android:scaleType="fitCenter"
+            android:layout_height="@dimen/standard_button_height"
+            android:layout_width="@dimen/standard_button_height"
+
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+
+            android:layout_alignParentRight="true"/>
+</RelativeLayout>

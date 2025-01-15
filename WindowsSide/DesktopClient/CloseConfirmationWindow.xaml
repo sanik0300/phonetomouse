@@ -1,0 +1,41 @@
+﻿<Window x:Class="DesktopClient.CloseConfirmationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopClient"
+        mc:Ignorable="d"
+        Title="Confirm closing" Height="150" Width="350"
+        ResizeMode="NoResize" Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="confirmationUIBtn">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding ElementName=titleTextBox, Path=Height}"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.ColumnSpan="3" TextWrapping="Wrap" x:Name="titleTextBox">
+            <Span>Are you sure you want to close the application?</Span>
+            <LineBreak/>
+            <Span>(This confirmation is needed to prevent accidental closures)</Span>
+        </TextBlock>
+
+        <Button x:Name="yesCloseButton" Grid.Column="2" Grid.Row="1" Style="{StaticResource confirmationUIBtn}" 
+                FontWeight="Bold" BorderBrush="Firebrick" BorderThickness="4" Background="LightSalmon"
+                Content="Yes, close the app" Click="yesCloseButton_Click"/>
+        
+        <Button x:Name="noClosureButton" Grid.Row="1" Content="No, cancel closing" Style="{StaticResource confirmationUIBtn}" Click="noClosureButton_Click"/>
+    </Grid>
+</Window>

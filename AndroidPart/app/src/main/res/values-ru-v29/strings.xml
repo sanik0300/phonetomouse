@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="theme_point">Тема</string>
+    <string-array name="theme_option_names">
+        <item>Как на устройстве</item>
+        <item>Светлая</item>
+        <item>Тёмная</item>
+    </string-array>
+</resources>

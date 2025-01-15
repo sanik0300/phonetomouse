@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--EntryActivity-->
+    <string name="entry_device_name_placeholder">(нічого не обрано)</string>
+    <string name="entry_target">Цільовий пристрій</string>
+    <string name="entry_config_blt">Налаштувати Bluetooth</string>
+    <string name="entry_screen">Тачпад</string>
+    <string name="entry_info">Довідка</string>
+    <string name="entry_settings">Інші налаштування</string>
+
+    <!--BluetoothConfigActivity-->
+    <string name="bt_just_visible">Видимі пристрої</string>
+    <string name="bt_paired">Сполучені</string>
+    <string name="bt_discover">Шукати видимі</string>
+    <string name="bt_cancel">Скасувати</string>
+    <string name="bt_stop">Стоп</string>
+    <string name="bt_show">Показати</string>
+    <string name="bt_action_text">Знайдіть і виберіть пристрій для підключення</string>
+
+    <!--Settings-->
+    <string name="cursor_size_point">Масштаб курсору</string>
+    <string name="reconnect_point">Перепідключатися автоматично, якщо bluetooth був вимкнений під час активного з\'єднання і знову з\'явився</string>
+    <string name="lang_point">Мова</string>
+    <string name="theme_point">Темна тема</string>
+    <string name="sound1_option_point">Повідомляти звуком про під-/від\'єднання</string>
+    <string name="sound2_option_point">Вібрація при симуляції затиснення/підняття миші</string>
+
+    <!--Info-->
+    <string name="info_action_text">Як користуватися</string>
+    <string-array name="info_categories">
+        <item>Як приєднатися</item>
+        <item>Як робити жести миші</item>
+        <item>Як від\'єднатися</item>
+    </string-array>
+    <string-array name="gestures_explain">
+        <item>Вибір використовуваної кнопки миші: натиснути перемикач зі стрілкою, вибрана кнопка буде підсвічуватися, за замовленням вибрана ліва</item>
+        <item>Рух курсора: рухати палець по екрану</item>
+        <item>Клік: одне натискання</item>
+        <item>Подвійний клік: подвійне натискання</item>
+        <item>Затиснути кнопку миші: опустити палець на екран</item>
+        <item>Відпустити кнопку миші: підняти палець з екрану</item>
+        <item>Прокручування колеса вгору: кнопка підвищення гучності</item>
+        <item>Прокручування колеса вниз: кнопка пониження гучності</item>
+    </string-array>
+    <string-array name="disconnect_options">
+        <item>а) на телефоні натиснути кнопку Пауза</item>
+        <item>б) на телефоні натиснути кнопку Додому</item>
+        <item>в) вийти із застосунку на телефоні</item>
+        <item>г) закрити застосунок на телефоні</item>
+        <item>д) вимкнути телефон</item>
+        <item>е) на ноутбуці/комп\'ютері натиснути кнопку "Disconnect" (від\'єднатися)</item>
+        <item>ж) закрити програму на ноутбуці/комп\'ютері</item>
+    </string-array>
+
+    <!--Touchscreen-->
+    <string name="screen_you_can_connect">Натисніть кнопку play для з\'єднання</string>
+    <string name="screen_no_blt">Bluetooth вимкнений</string>
+    <string name="screen_up">Верх</string>
+    <string name="screen_down">Низ</string>
+    <string name="screen_left">Ліво</string>
+    <string name="screen_right">Право</string>
+    <string name="screen_no_conn_toast_text">Цільовий пристрій не очікує з\'єднання зараз</string>
+</resources>

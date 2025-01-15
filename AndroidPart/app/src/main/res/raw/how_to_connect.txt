@@ -1,0 +1,7 @@
+1. Bluetooth should be enabled on both the phone and laptop/computer
+2. Connect the phone to laptop/computer via Bluetooth
+3. If device name of the laptop/computer is not shown on the main page of the phone app, go to "Configure Bluetooth" and select that name in the "Paired" list
+4. In the desktop app, click "Discover paired" or "Discover all" and select device name of the phone in the "Paired" list - it will appear near the "Connect" button
+5. Click "Connect" in the desktop app
+6. In the phone app, go to "Touchscreen" and click the Play button
+7. When the connection establishes, the touchscreen gets the aspect ratio of the laptop/computer screen and the directions are written on it; in the desktop app the darker frame changes color and begins approximately showing the location of your gestures

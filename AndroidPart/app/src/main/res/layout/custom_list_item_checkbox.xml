@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/is_saved_check"
+
+            android:scrollbarFadeDuration="0"
+            android:clickable="true"
+            android:descendantFocusability="blocksDescendants">
+        <TextView
+                android:id="@android:id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:singleLine="true"
+                android:clickable="false"
+                android:focusable="false"
+                android:textIsSelectable="false"
+
+                android:focusableInTouchMode="false"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                android:gravity="center_vertical"
+                android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+                android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+                android:minHeight="?android:attr/listPreferredItemHeightSmall"/>
+    </HorizontalScrollView>
+    <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/is_saved_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            style="@android:style/Widget.CompoundButton.RadioButton"/>
+</RelativeLayout>

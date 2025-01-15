@@ -1,0 +1,15 @@
+<resources>
+    <style name="Widget.Theme.AndroidSide.MyView" parent="">
+        <item name="android:background">@color/gray_400</item>
+    </style>
+
+    <style name="MouseButtonView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">72dp</item>
+        <item name="android:textColor">#808080</item>
+    </style>
+
+    <style name="SelectedMouseButtonView" parent="MouseButtonView">
+        <item name="android:textColor">@color/orange</item>
+    </style>
+
+</resources>

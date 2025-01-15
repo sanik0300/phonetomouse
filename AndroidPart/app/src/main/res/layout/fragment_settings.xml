@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settings_base_viewgroup"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:context="com.sanikshomemade.phonetomouse.activities.OptionsActivity$OptionsFragment">
+
+    <TextView android:id="@+id/cursor_scale_text"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="@id/cursor_scale_seekbar"
+              app:layout_constraintLeft_toLeftOf="parent"
+              android:text="@string/cursor_size_point"/>
+    <TextView android:id="@+id/scale_value_text"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="@id/cursor_scale_seekbar"
+              app:layout_constraintStart_toEndOf="@id/cursor_scale_text"
+              android:text="20"
+              android:textSize="32dp"/>
+    <SeekBar
+            android:id="@+id/cursor_scale_seekbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/scale_value_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/cursor_demo_view"
+            app:layout_constrainedWidth="true"/>
+    <ImageView android:id="@+id/cursor_demo_view"
+               android:layout_width="60dp"
+               android:layout_height="60dp"
+               android:background="@drawable/device_name_border"
+               android:scaleType="center"
+               app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintRight_toRightOf="parent"
+               app:layout_constraintBottom_toBottomOf="@id/cursor_scale_seekbar"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/center_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+
+    <Switch android:id="@+id/setting_reconnect_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/reconnect_text"
+            app:layout_constraintBottom_toBottomOf="@id/reconnect_text"
+            app:layout_constraintStart_toEndOf="@id/center_guide"/>
+
+    <LinearLayout android:id="@+id/theme_ui"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  app:layout_constraintTop_toTopOf="@id/theme_text"
+                  app:layout_constraintBottom_toBottomOf="@id/theme_text"
+                  app:layout_constraintStart_toEndOf="@id/center_guide">
+        <androidx.appcompat.widget.AppCompatSpinner
+                 android:id="@+id/theme_option_picker"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintStart_toEndOf="@id/center_guide" android:minHeight="48dp"
+                 tools:ignore="SpeakableTextPresentCheck"/>
+        <Switch
+                android:id="@+id/theme_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+             android:id="@+id/language_picker"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:entries="@array/languages"
+             app:layout_constraintStart_toEndOf="@id/center_guide"
+             app:layout_constraintTop_toBottomOf="@id/theme_ui" android:minHeight="48dp"/>
+    <Switch
+            android:id="@+id/setting_sound1_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/center_guide"
+            app:layout_constraintTop_toBottomOf="@id/language_picker"/>
+    <Switch
+            android:id="@+id/setting_sound2_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/center_guide"
+            app:layout_constraintTop_toBottomOf="@id/textview_conn_sound"/>
+
+
+    <TextView android:id="@+id/reconnect_text"
+              android:text="@string/reconnect_point"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@id/cursor_scale_seekbar"
+              app:layout_constrainedWidth="true"
+              app:layout_constraintEnd_toStartOf="@id/center_guide"/>
+
+    <TextView android:id="@+id/theme_text"
+              android:text="@string/theme_point"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintTop_toBottomOf="@id/reconnect_text"
+              app:layout_constraintBottom_toTopOf="@id/language_picker"/>
+
+    <TextView android:id="@+id/lang_text"
+              android:text="@string/lang_point"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintBaseline_toBaselineOf="@id/language_picker"/>
+
+
+    <TextView android:id="@+id/textview_conn_sound"
+              android:text="@string/sound1_option_point"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toStartOf="@id/center_guide"
+              app:layout_constrainedWidth="true"
+              app:layout_constraintBaseline_toBaselineOf="@id/setting_sound1_switch"/>
+
+    <TextView android:text="@string/sound2_option_point"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toStartOf="@id/center_guide"
+              app:layout_constrainedWidth="true"
+              app:layout_constraintBaseline_toBaselineOf="@id/setting_sound2_switch"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

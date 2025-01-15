@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.EntryActivity">
+
+    <LinearLayout
+            android:id="@+id/entry_titles_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/menu_btns_container"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="12dp">
+        <TextView
+                android:id="@+id/menu_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone to mouse converter"
+                android:textSize="28dp"/>
+        <TextView
+                android:id="@+id/no_blt_warning_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/screen_no_blt"
+                android:textSize="24dp"
+                android:visibility="gone"/>
+    </LinearLayout>
+
+
+
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/entry_target"
+                  app:layout_constraintTop_toTopOf="@id/menu_btns_container"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constrainedWidth="true"
+              app:layout_constraintRight_toLeftOf="@id/menu_btns_container"
+              android:layout_marginLeft="20dp"
+              android:textSize="16sp"/>
+
+    <LinearLayout
+            android:id="@+id/menu_btns_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout android:id="@+id/config_section"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/target_device_name"
+                    android:textAlignment="center"
+
+                    android:padding="6dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="none1234"
+                    android:background="@drawable/device_name_border"/>
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/blt_settings_btn"
+                    android:text="@string/entry_config_blt"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/go_to_touchscreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/entry_screen"/>
+        <Button
+                android:id="@+id/go_to_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/entry_info"/>
+        <Button
+                android:id="@+id/go_to_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/entry_settings"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
